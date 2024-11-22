@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Default grid layout for mobile (1 column) */
+    .book-grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr; /* 1 column by default */
+        padding: 20px; /* Add padding to avoid touching the edges */
+    }
+
+    /* For tablet screens (min-width: 768px), use 2 columns */
+    @media (min-width: 768px) {
+        .book-grid {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        }
+    }
+
+    /* For larger screens (min-width: 1024px), use 4 columns */
+    @media (min-width: 1024px) {
+        .book-grid {
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        }
+    }
+
+    /* For extra large screens (min-width: 1280px), use 4 columns */
+    @media (min-width: 1280px) {
+        .book-grid {
+            grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        }
+    }
+
+    .book-card {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .book-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .book-card__image {
+        width: 150px;
+        height: 200px;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+
+    .book-card__title {
+        font-size: 1.5rem;
+        margin: 15px 0 10px;
+        font-weight: bold;
+    }
+
+    .book-card__author,
+    .book-card__genre,
+    .book-card__rating {
+        font-size: 1rem;
+        margin: 5px 0;
+        color: #555;
+    }
+
+    .book-card__button {
+        background-color: #007bff;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .book-card__button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Search bar style */
+    .search-bar {
+        width: 100%;
+        max-width: 500px;
+        padding: 10px;
+        margin: 20px auto;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        display: block;
+        outline: none;
+    }
+</style>
+<body>
+ 
+   
+    <!-- Book Cards Grid -->
+    <main class="book-grid" id="bookGrid">
+        <article class="book-card" data-title="Book Title 1" data-author="Author Name" data-genre="Fiction">
+          <img src="image/kill.jpg">
+            <h2 class="book-card__title">Book Title 1</h2>
+            <p class="book-card__author">Author: Author Name</p>
+            <p class="book-card__genre">Genre: Fiction</p>
+            <p class="book-card__rating">Rating: ★★★★☆</p>
+            <button class="book-card__button">View Details</button>
+          </div>
+        </article>
+        <article class="book-card" data-title="Book Title 2" data-author="Author Name" data-genre="Fiction">
+          <img src="image/catcher.jpg" alt="Book Title" class="book-card__image">
+          <div class="book-card__info">
+            <h2 class="book-card__title">Book Title 2</h2>
+            <p class="book-card__author">Author: Author Name</p>
+            <p class="book-card__genre">Genre: Fiction</p>
+            <p class="book-card__rating">Rating: ★★★★☆</p>
+            <button class="book-card__button">View Details</button>
+          </div>
+        </article>
+        <article class="book-card" data-title="Book Title 3" data-author="Author Name" data-genre="Fiction">
+          <img src="image/pride.jpg" alt="Book Title" class="book-card__image">
+          <div class="book-card__info">
+            <h2 class="book-card__title">Book Title 3</h2>
+            <p class="book-card__author">Author: Author Name</p>
+            <p class="book-card__genre">Genre: Fiction</p>
+            <p class="book-card__rating">Rating: ★★★★☆</p>
+            <button class="book-card__button">View Details</button>
+          </div>
+        </article>
+        <article class="book-card" data-title="Book Title 4" data-author="Author Name" data-genre="Fiction">
+          <img src="image/romeo.jpg" alt="Book Title" class="book-card__image">
+          <div class="book-card__info">
+            <h2 class="book-card__title">Book Title 4</h2>
+            <p class="book-card__author">Author: Author Name</p>
+            <p class="book-card__genre">Genre: Fiction</p>
+            <p class="book-card__rating">Rating: ★★★★☆</p>
+            <button class="book-card__button">View Details</button>
+          </div>
+        </article>
+        <article class="book-card" data-title="Book Title 5" data-author="Author Name" data-genre="Fiction">
+          <img src="image/orwell.webp" alt="Book Title" class="book-card__image">
+          <div class="book-card__info">
+            <h2 class="book-card__title">Book Title 5</h2>
+            <p class="book-card__author">Author: Author Name</p>
+            <p class="book-card__genre">Genre: Fiction</p>
+            <p class="book-card__rating">Rating: ★★★★☆</p>
+            <button class="book-card__button">View Details</button>
+          </div>
+        </article>
+        <article class="book-card" data-title="Book Title 6" data-author="Author Name" data-genre="Fiction">
+          <img src="image/hamlet.jpg">
+          <div class="book-card__info">
+            <h2 class="book-card__title">Book Title 6</h2>
+            <p class="book-card__author">Author: Author Name</p>
+            <p class="book-card__genre">Genre: Fiction</p>
+            <p class="book-card__rating">Rating: ★★★★☆</p>
+            <button class="book-card__button">View Details</button>
+          </div>
+        </article>
+        <article class="book-card" data-title="Book Title 7" data-author="Author Name" data-genre="Fiction">
+          <img src="image/brave.jpg" alt="Book Title" class="book-card__image">
+          <div class="book-card__info">
+            <h2 class="book-card__title">Book Title 7</h2>
+            <p class="book-card__author">Author: Author Name</p>
+            <p class="book-card__genre">Genre: Fiction</p>
+            <p class="book-card__rating">Rating: ★★★★☆</p>
+            <button class="book-card__button">View Details</button>
+          </div>
+        </article>
+        <article class="book-card" data-title="Book Title 8" data-author="Author Name" data-genre="Fiction">
+          <img src="image/ring.jpg" alt="Book Title" class="book-card__image">
+          <div class="book-card__info">
+            <h2 class="book-card__title">Book Title 8</h2>
+            <p class="book-card__author">Author: Author Name</p>
+            <p class="book-card__genre">Genre: Fiction</p>
+            <p class="book-card__rating">Rating: ★★★★☆</p>
+            <button class="book-card__button">View Details</button>
+          </div>
+        </article>
+    </main>
+
+    <script>
+        // Get the search input and book grid
+        const searchInput = document.getElementById('search');
+        const bookGrid = document.getElementById('bookGrid');
+        const books = bookGrid.getElementsByClassName('book-card');
+
+        // Add event listener for input on the search bar
+        searchInput.addEventListener('input', function() {
+            const query = searchInput.value.toLowerCase();
+
+            Array.from(books).forEach(function(book) {
+                const title = book.getAttribute('data-title').toLowerCase();
+                const author = book.getAttribute('data-author').toLowerCase();
+                const genre = book.getAttribute('data-genre').toLowerCase();
+
+                // If query matches title, author, or genre, show the book card
+                if (title.includes(query) || author.includes(query) || genre.includes(query)) {
+                    book.style.display = '';
+                } else {
+                    book.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
